@@ -4,14 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project 2</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Logo</a>
+      <div class="nav-wrapper grey">
+        <a href="/" class="brand-logo">Movies</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <form action="/movies" method="POST" id="movie_search">
+              <input type="text" name="movie_search" placeholder="Search">
+            </form>
+          </li>
           <li><a href="/">Home</a></li>
           <li><a href="/auth/signup">Signup</a></li>
           <li><a href="/auth/login">Login</a></li>
@@ -19,9 +24,6 @@
           <li><a href="/profile">Profile</a></li>
         </ul>
       </div>
-      <form action="/movies" method="POST" id="movie_search">
-        <input type="text" name="movie_search">
-      </form>
     </nav>
     <div class="container">
       <%- body %>
@@ -29,5 +31,6 @@
 
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

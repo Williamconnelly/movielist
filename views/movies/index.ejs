@@ -1,8 +1,21 @@
 <h1>Movies!</h1>
 
-<% movies.forEach(function(movie) { %>
-	<% if(movie.Poster !== "N/A") { %>
-		<p><%=movie.Title%></p>
-		<img src="<%=movie.Poster%>">
-	<% } %>
-<% }) %>
+<div class="container">
+	<div class="row">
+		<% movies.forEach(function(movie) { %>
+			<% if(movie.Poster !== "N/A") { %>
+				<div class="col s12 m6">
+					<div class="card">
+						<div class="card-content">
+							<span class="card-title"><%=movie.Title%></span>
+							<img src="<%=movie.Poster%>">
+							<div class="card-action">
+								<a href="#" class="waves-effect waves-light btn">Add Movie</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% } %>
+		<% }) %>
+	</div>
+</div>
