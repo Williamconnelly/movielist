@@ -48,6 +48,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/movies', require('./controllers/movies'));
+app.use('/user_movies', require('./controllers/user_movies'));
 
 var server = app.listen(process.env.PORT || 3000);
 

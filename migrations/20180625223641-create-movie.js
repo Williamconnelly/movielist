@@ -14,7 +14,13 @@ module.exports = {
       poster: {
         type: Sequelize.STRING
       },
+      type: {
+        type: Sequelize.STRING
+      },
       rating: {
+        type: Sequelize.INTEGER
+      },
+      year: {
         type: Sequelize.INTEGER
       },
       api_id: {

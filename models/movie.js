@@ -3,7 +3,9 @@ module.exports = (sequelize, DataTypes) => {
   var movie = sequelize.define('movie', {
     title: DataTypes.STRING,
     poster: DataTypes.STRING,
+    type: DataTypes.STRING,
     rating: DataTypes.INTEGER,
+    year: DataTypes.INTEGER,
     api_id: DataTypes.STRING
   }, {});
   movie.associate = function(models) {
