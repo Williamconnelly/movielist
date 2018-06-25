@@ -10,13 +10,14 @@
 							<span class="card-title"><%=movie.Title%></span>
 							<img src="<%=movie.Poster%>">
 							<div class="card-action">
-								<form>
-									<a href="#" class="waves-effect waves-light btn">Add Movie</a>
+								<form action="/user_movies" method="POST">
 									<input type="hidden" name="title" value="<%=movie.Title%>">
 									<input type="hidden" name="poster" value="<%=movie.Poster%>">
-									<input type="hidden" name="api_id" value="">
-									<input type="hidden" name="title" value="">
-									<input type="hidden" name="title" value="">
+									<input type="hidden" name="rating" value="10">
+									<input type="hidden" name="year" value="<%=movie.Year%>">
+									<input type="hidden" name="type" value="<%=movie.Type%>">
+									<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
+									<input type="submit" class="waves-effect waves-light btn" value="Add Movie">
 								</form>
 							</div>
 						</div>
