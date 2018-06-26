@@ -1,14 +1,12 @@
-<h1>Movies!</h1>
-
-<div class="container">
+<div id="movies">
 	<div class="row">
 		<% movies.forEach(function(movie) { %>
 			<% if(movie.Poster !== "N/A") { %>
-				<div class="col s12 m6">
+				<div class="col s12 m3"> 
 					<div class="card">
 						<div class="card-content">
 							<span class="card-title"><%=movie.Title%></span>
-							<img src="<%=movie.Poster%>">
+							<img src="<%=movie.Poster%>" class="resizeimg">
 							<div class="card-action">
 								<form action="/user_movies" method="POST">
 									<input type="hidden" name="title" value="<%=movie.Title%>">

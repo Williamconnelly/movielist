@@ -1,9 +1,10 @@
 nav {
-	background-color: #193441;
+	background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);
 }
 
 body {
 	background-color: #eaf1f5;
+	/*font-family: 'Encode Sans Condensed', sans-serif;*/
 }
 	
 .form-container {
@@ -13,8 +14,10 @@ body {
 	border-radius: 1em;
 }
 
-.brand-logo {
-	margin-left: 1em;
+@media (min-width: 990px){
+	.brand-logo {
+		margin-left: 1em;
+	}
 }
 
 /*Search Bar*/
@@ -47,12 +50,40 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	position: relative;
 }
 
+#movies img{
+	max-width: 360px;
+  	max-height: 240px;
+  	width: auto;
+  	height: auto;
+}
 
+#movies {
+	text-align: center;
+	padding: 0;
+	margin-top: 1em;
+}
 
+.card .card-content {
+	height: 28em;
+	padding: 1em;
+}
 
+.card .card-action {
+	padding: 1em;
+}
 
+@media (max-width: 990px) {
+  .resizeimg {
+    height: auto;
+  }
+}
 
-
+@media (min-width: 1000px) {
+  .resizeimg {
+    width: auto;
+    height: 350px;
+  }
+}
 
 
 
