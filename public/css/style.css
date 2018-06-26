@@ -111,6 +111,41 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	border-radius: 5px;
 }
 
+.alert-card {
+	width: 40%;
+	background-color: white;
+}
+
+.alert-card .card-content{
+	height: 3em;
+	line-height: 2em;
+	text-align: center;
+	width: 100%;
+}
+
+.movie-grid {
+	margin-top: 1em;
+	display: grid;
+	grid-template-columns: 7fr 10fr 5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "poster info misc";
+}
+
+.poster-col {
+	grid-area: poster;
+}
+
+.info-col {
+	grid-area: info;
+}
+
+.misc-col {
+	grid-area: misc;
+}
+
+
+
+
 
 
 

@@ -28,7 +28,6 @@ router.post("/", function(req, res) {
 			year: movie.year,
 			type: movie.type,
 			api_id: movie.api_id,
-			userId: req.user.id
 		}
 	}).spread(function(movie, created) {
 		if (created) {

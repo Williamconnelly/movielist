@@ -27,9 +27,9 @@ router.get("/:id", function(req, res) {
 		url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id
 	}, function(error, response, body) {
 		if (!error && response.statusCode === 200) {
-			var movie = body;
+			var movie = JSON.parse(body);
 			console.log(movie);
-			res.send(movie);
+			res.render("movies/show", {movie: movie});
 		} else {
 			console.log(error, response);
 		};

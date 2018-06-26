@@ -1,11 +1,27 @@
 <% if (alerts.error) { %>
 	<% alerts.error[0].split(",").forEach(function(msg) { %>
-		<div class="alert alert-danger"><%= msg %></div>
+		<div class="row">
+		    <div class="col s12 m6">
+		      <div class="card alert-card">
+		        <div class="card-content white-text">
+		          <p><%- msg %></p>
+		        </div>
+		      </div>
+		    </div>
+  		</div>
 	<% }); %>
 <% }; %>
 
 <% if (alerts.success) { %>
 	<% alerts.success[0].split(",").forEach(function(msg) { %>
-		<div class="alert alert-success"><%= msg %></div>
+	<div class="row">
+		    <div class="col s12 m6">
+		      <div class="card alert-card">
+		        <div class="card-content white-text">
+		          <p><%- msg %></p>
+		        </div>
+		      </div>
+		    </div>
+  		</div>
 	<% }); %>
 <% }; %>
