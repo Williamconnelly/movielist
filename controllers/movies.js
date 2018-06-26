@@ -13,7 +13,6 @@ router.post("/", function(req, res) {
 	}, function(error, response, body) {
 		if (!error && response.statusCode === 200) {
 			var movies = JSON.parse(body);
-			console.log(movies.Search);
 			res.render("movies/index", {movies: movies.Search});
 		} else {
 			console.log(error, response);

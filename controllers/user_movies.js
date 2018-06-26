@@ -7,11 +7,11 @@ require('dotenv').config();
 
 // GET / - Display all movies in user's list
 router.get("/", function(req, res) {
-	db.movie.findAll({
-		where: {userId: req.user.id}
-	}).then(function(movies) {
-		res.render("user_movies/index", {movies: movies});
-	});
+	db.user.findById(req.user.id).then(function(user) {
+		user.getMovies().then(function(movies) {
+			res.render("user_movies/index", {movies: movies});
+		})
+	})
 });
 
 // POST / - Add selected movie to user's list in db
