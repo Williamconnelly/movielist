@@ -7,9 +7,8 @@ require('dotenv').config();
 
 // GET / - Display all movies in user's list
 router.get("/", function(req, res) {
-	console.log(req.user.id);
 	db.movie.findAll({
-		where: {}
+		where: {userId: req.user.id}
 	}).then(function(movies) {
 		res.render("user_movies/index", {movies: movies});
 	});
@@ -19,29 +18,32 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res) {
 	var movie = req.body;
 	console.log(movie);
-	db.movie.findOrCreate({
-		where: {api_id: movie.api_id},
-		defaults: {
-			title: movie.title,
-			poster: movie.poster,
-			rating: movie.rating,
-			year: movie.year,
-			type: movie.type,
-			api_id: movie.api_id,
+	db.user.findOrCreate({
+		where: {
+			id: req.user.id
 		}
-	}).spread(function(movie, created) {
-		if (created) {
-			// No record was found - logged new movie
+	}).spread(function(user, created) {
+		db.movie.findOrCreate({
+			where: {api_id: movie.api_id},
+			defaults: {
+				title: movie.title,
+				poster: movie.poster,
+				rating: movie.rating,
+				year: movie.year,
+				type: movie.type,
+				api_id: movie.api_id,
+			}
+		}).spread(function(movie, created) {
+			user.addMovie(movie).then(function(movie) {
+				 console.log(movie, "added to", user);
+				 res.redirect("/user_movies");
+			})
+		}).catch(function(error) {
+			// Catch any additional errors
+			console.log(error.message);
 			res.redirect("/user_movies");
-		} else {
-			// Movie was already in list, did not add movie
-			res.redirect("/user_movies");
-		};
-	}).catch(function(error) {
-		// Catch any additional errors
-		console.log(error.message);
-		res.redirect("/user_movies");
-	});
+		});
+	})
 });
 
 
