@@ -1,7 +1,23 @@
 nav {
-	background-color: #3E606F;
+	background-color: #193441;
 }
 
+body {
+	background-color: #eaf1f5;
+}
+	
+.form-container {
+	background-color: #f4f4f4;
+	padding: 3em;
+	margin-top: 1em;
+	border-radius: 1em;
+}
+
+.brand-logo {
+	margin-left: 1em;
+}
+
+/*Search Bar*/
 form.input-field {
 	margin: 0;
 	padding: 0;
@@ -27,7 +43,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 }
 
 #searchbar {
-	top: -0.6em;
+	top: -0.7em;
 	position: relative;
 }
 

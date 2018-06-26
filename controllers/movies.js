@@ -5,10 +5,6 @@ var request = require("request")
 var router = express.Router();
 require('dotenv').config();
 
-// router.get("/", function(req, res) {
-// 	res.render("movies/index");
-// });
-
 router.post("/", function(req, res) {
 	request({
 		url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&s=" + req.body.movie_search
