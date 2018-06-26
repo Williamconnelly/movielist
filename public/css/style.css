@@ -1,0 +1,53 @@
+nav {
+	background-color: #3E606F;
+}
+
+form.input-field {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	height: 2.5em;
+	margin-top: 0.8em;
+	border-radius: 10em;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 0;
+    box-shadow: 0 0 0 0 #ffffff;
+}
+
+.input-field .prefix {
+	top: -0.6rem;
+	left: 0.1em;
+	color: black;
+}
+
+.input-field .prefix.active {
+	color: lightgray;
+}
+
+#searchbar {
+	top: -0.6em;
+	position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

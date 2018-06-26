@@ -6,24 +6,41 @@ var router = express.Router();
 require('dotenv').config();
 
 router.get("/", function(req, res) {
-	db.movie.findAll().then(function(data) {
-		res.render("user_movies/index", {movies: data});
+	db.movie.findAll({
+		where: {}
+	}).then(function(movies) {
+		res.render("user_movies/index", {movies: movies});
 	});
 });
 
 router.post("/", function(req, res) {
 	var movie = req.body;
 	console.log(movie);
-	// db.movie.create({
-	// 	title: movie.title,
-	// 	poster: movie.poster,
-	// 	rating: movie.rating,
-	// 	type: movie.type,
-	// 	api_id: movie.api_id
-	// }).then(function(movie) {
-	// 	res.redirect("/user_movies/index");
-	// });
-	res.redirect("/user_movies")
+	db.movie.findOrCreate({
+		where: {api_id: movie.api_id},
+		defaults: {
+			title: movie.title,
+			poster: movie.poster,
+			rating: movie.rating,
+			year: movie.year,
+			type: movie.type,
+			api_id: movie.api_id
+		}
+	}).spread(function(movie, created) {
+		if (created) {
+			// No record was found - logged new movie
+			res.redirect("/user_movies");
+		} else {
+			// Movie was already in list, did not add movie
+			res.redirect("/user_movies");
+		};
+	}).catch(function(error) {
+		// Catch any additional errors
+		console.log(error.message);
+		res.redirect("/user_movies");
+	});
 });
+
+ 
 
 module.exports = router;

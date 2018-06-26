@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper grey">
+      <div class="nav-wrapper">
         <a href="/" class="brand-logo">Movies</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
-            <form action="/movies" method="POST" id="movie_search">
-              <input type="text" name="movie_search" placeholder="Search">
+            <form action="/movies" method="POST" class="input-field">
+               <i class="material-icons prefix">search</i>
+              <input type="text" name="movie_search" placeholder="Search" autocomplete="off" id="searchbar">
             </form>
           </li>
           <li><a href="/auth/login">Login</a></li>
