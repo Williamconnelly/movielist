@@ -23,7 +23,17 @@ router.post("/", function(req, res) {
 
 // GET movie/:id - Displays a specific movie using the API and IMDB id
 router.get("/:id", function(req, res) {
-	
+	request({
+		url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id
+	}, function(error, response, body) {
+		if (!error && response.statusCode === 200) {
+			var movie = body;
+			console.log(movie);
+			res.send(movie);
+		} else {
+			console.log(error, response);
+		};
+	});
 });
 
 module.exports = router;

@@ -15,7 +15,10 @@
 									<input type="hidden" name="type" value="<%=movie.Type%>">
 									<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
 									<input type="submit" class="waves-effect waves-light movie-button" value="Add Movie">
+								</form>
+								<form action="/movies/<%=movie.imdbID%>" method="GET">
 									<input type="submit" class="waves-effect waves-light movie-button" value="Details">
+									<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
 								</form>
 							</div>
 						</div>

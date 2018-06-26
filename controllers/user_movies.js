@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // GET / - Display all movies in user's list
 router.get("/", function(req, res) {
+	console.log(req.user.id);
 	db.movie.findAll({
 		where: {}
 	}).then(function(movies) {
@@ -26,7 +27,8 @@ router.post("/", function(req, res) {
 			rating: movie.rating,
 			year: movie.year,
 			type: movie.type,
-			api_id: movie.api_id
+			api_id: movie.api_id,
+			userId: req.user.id
 		}
 	}).spread(function(movie, created) {
 		if (created) {
