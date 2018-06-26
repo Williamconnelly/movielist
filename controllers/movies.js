@@ -5,6 +5,8 @@ var request = require("request")
 var router = express.Router();
 require('dotenv').config();
 
+
+// POST / - Display all movies relevant to search terms
 router.post("/", function(req, res) {
 	request({
 		url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&s=" + req.body.movie_search
@@ -17,6 +19,11 @@ router.post("/", function(req, res) {
 			console.log(error, response);
 		};
 	});
+});
+
+// GET movie/:id - Displays a specific movie using the API and IMDB id
+router.get("/:id", function(req, res) {
+	
 });
 
 module.exports = router;

@@ -50,11 +50,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	position: relative;
 }
 
-#movies img{
-	max-width: 360px;
+#movies img {
   	max-height: 240px;
-  	width: auto;
-  	height: auto;
 }
 
 #movies {
@@ -63,35 +60,44 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	margin-top: 1em;
 }
 
+.card {
+	border-radius: 5px;
+}
+
 .card .card-content {
-	height: 28em;
-	padding: 1em;
+	height: 19em;
+	padding: 0;
+	padding-top: 0.4em;
+	background-color: gray;
+	border-radius: 5px
 }
 
 .card .card-action {
-	padding: 1em;
+	padding: 0;
+	border: 0;
+	/*padding-top: 1em;*/
+	position: relative;
+	padding-bottom: 0.6em;
 }
 
-@media (max-width: 990px) {
-  .resizeimg {
-    height: auto;
-  }
+.movie-button {
+	border: 1px solid white;
+	margin-top: 0.3em;
 }
 
-@media (min-width: 1000px) {
-  .resizeimg {
-    width: auto;
-    height: 350px;
-  }
+.card-action input[type=submit] {
+	color: white;
 }
 
+.col .s6 .m3 {
+	height: 1000px;
+}
 
-
-
-
-
-
-
+@media (max-width: 600px) {
+	#movies .row .col {
+		padding: 0.3em .75rem;
+	}
+}
 
 
 

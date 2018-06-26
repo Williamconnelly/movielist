@@ -1,12 +1,11 @@
 <div id="movies">
 	<div class="row">
 		<% movies.forEach(function(movie) { %>
-			<% if(movie.Poster !== "N/A") { %>
-				<div class="col s12 m3"> 
-					<div class="card">
+			<% if(movie.Poster !== "N/A" && movie.Type !== "game") { %>
+				<div class="col s6 m3"> 
+					<div class="card tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="card-content">
-							<span class="card-title"><%=movie.Title%></span>
-							<img src="<%=movie.Poster%>" class="resizeimg">
+							<img src="<%=movie.Poster%>" class="responsive-img" alt="<%=movie.Title%>">
 							<div class="card-action">
 								<form action="/user_movies" method="POST">
 									<input type="hidden" name="title" value="<%=movie.Title%>">
@@ -15,7 +14,8 @@
 									<input type="hidden" name="year" value="<%=movie.Year%>">
 									<input type="hidden" name="type" value="<%=movie.Type%>">
 									<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
-									<input type="submit" class="waves-effect waves-light btn" value="Add Movie">
+									<input type="submit" class="waves-effect waves-light movie-button" value="Add Movie">
+									<input type="submit" class="waves-effect waves-light movie-button" value="Details">
 								</form>
 							</div>
 						</div>

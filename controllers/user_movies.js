@@ -5,6 +5,7 @@ var request = require("request")
 var router = express.Router();
 require('dotenv').config();
 
+// GET / - Display all movies in user's list
 router.get("/", function(req, res) {
 	db.movie.findAll({
 		where: {}
@@ -13,6 +14,7 @@ router.get("/", function(req, res) {
 	});
 });
 
+// POST / - Add selected movie to user's list in db
 router.post("/", function(req, res) {
 	var movie = req.body;
 	console.log(movie);
@@ -41,6 +43,6 @@ router.post("/", function(req, res) {
 	});
 });
 
- 
+
 
 module.exports = router;
