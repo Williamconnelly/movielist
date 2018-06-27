@@ -5,7 +5,7 @@
 				<div class="col s6 m3"> 
 					<div class="card tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="card-content">
-							<img src="<%=movie.Poster%>" class="responsive-img" alt="<%=movie.Title%>">
+							<img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>">
 							<div class="card-action">
 								<form action="/user_movies" method="POST">
 									<input type="hidden" name="title" value="<%=movie.Title%>">

@@ -18,11 +18,11 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res) {
 	var movie = req.body;
 	console.log(movie);
-	db.user.findOrCreate({
+	db.user.find({
 		where: {
 			id: req.user.id
 		}
-	}).spread(function(user, created) {
+	}).then(function(user) {
 		db.movie.findOrCreate({
 			where: {api_id: movie.api_id},
 			defaults: {

@@ -4,4 +4,5 @@ $(document).ready(function(){
 		enterDelay: 300, 
 		margin: -8
 	});
+	$('.materialboxed').materialbox();
 });
