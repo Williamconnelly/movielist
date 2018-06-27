@@ -8,10 +8,13 @@
           <input type="text" name="movie_search" placeholder="Search" autocomplete="off" id="searchbar">
         </form>
       </li>
-      <li><a href="/auth/login">Login</a></li>
-      <li><a href="/auth/signup">Create Account</a></li>
-      <li><a href="/auth/logout">Logout</a></li>
-      <li><a href="/profile">Profile</a></li>
+      <% if (currentUser) { %>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/signup">Create Account</a></li>
+      <% } %>
     </ul>
   </div>
 </nav>

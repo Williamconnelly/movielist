@@ -1,7 +1,7 @@
 <div id="movies">
 	<div class="row">
 		<% movies.forEach(function(movie) { %>
-			<% if(movie.Poster !== "N/A" && movie.Type !== "game") { %>
+			<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie") { %>
 				<div class="col s6 m3"> 
 					<div class="card tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="card-content">

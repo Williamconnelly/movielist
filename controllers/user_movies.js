@@ -46,6 +46,15 @@ router.post("/", function(req, res) {
 	})
 });
 
-
+router.delete("/", function(req, res) {
+	db.usersMovies.destroy({
+		where: {
+			userId: req.user.id,
+			movieId: req.body.id
+		}
+	}).then(function(data) {
+		res.sendStatus(200);
+	});
+});
 
 module.exports = router;

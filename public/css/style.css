@@ -63,19 +63,18 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 }
 
 .card {
-	border-radius: 5px;
+	border-radius: 12px;
 }
 
 .card .card-content {
-	height: 19em;
+	height: 19.3em;
 	padding: 0;
 	padding-top: 0.4em;
 	padding-left: 0.3em;
 	padding-right: 0.3em;
 	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
 	background-color: #14181d;
-	border-radius: 5px
-	border: 0;
+	border-radius: 12px
 }
 
 .card .card-action {
@@ -83,6 +82,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	border: 0;
 	position: relative;
 	padding-bottom: 0.6em;
+	height: 0;
 }
 
 .movie-button {
@@ -111,7 +111,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 }
 
 .material-tooltip {
-	background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);
+	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
+	background-color: #eaf1f6
 	border-radius: 5px;
 }
 
@@ -180,5 +181,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	/*background-color: #14181d;*/
 }
 
-
-
+table.highlight tbody tr:hover {
+    background-color: lightgray;
+}
