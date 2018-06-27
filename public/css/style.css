@@ -184,3 +184,27 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 table.highlight tbody tr:hover {
     background-color: lightgray;
 }
+
+ul.dropdown-content.select-dropdown li span {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,11 +10,15 @@
 								<form action="/user_movies" method="POST">
 									<input type="hidden" name="title" value="<%=movie.Title%>">
 									<input type="hidden" name="poster" value="<%=movie.Poster%>">
-									<input type="hidden" name="rating" value="10">
 									<input type="hidden" name="year" value="<%=movie.Year%>">
 									<input type="hidden" name="type" value="<%=movie.Type%>">
 									<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
-									<input type="submit" class="waves-effect waves-light movie-button" value="Add Movie">
+									<% if (currentUser) { %>
+										<input type="submit" class="waves-effect waves-light movie-button" value="Add Movie">
+										    
+									<% } else { %>
+									<!-- Do nothing -->
+									<% } %>
 								</form>
 								<form action="/movies/<%=movie.imdbID%>" method="GET">
 									<input type="submit" class="waves-effect waves-light movie-button" value="Details">
