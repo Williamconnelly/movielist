@@ -9,7 +9,7 @@ require('dotenv').config();
 router.get("/", function(req, res) {
 	db.user.findById(req.user.id).then(function(user) {
 		user.getMovies().then(function(movies) {
-			res.render("user_movies/index", {movies: movies});
+			res.render("user_movies/index", {movies: movies, user: user});
 		})
 	})
 });
