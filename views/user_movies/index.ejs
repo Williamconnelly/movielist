@@ -19,7 +19,7 @@
 				<td><%=movie.rating%></td>
 				<td><%=movie.type%></td>
 				<td><%=movie.year%></td>
-				<td><a href="#">Remove</a></td>
+				<td><a class="delete" href="/user_movies/<%= movie.id %>">Remove</a></td>
 			</tr>
 		<% }) %>	
 	</tbody>

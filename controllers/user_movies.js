@@ -2,11 +2,12 @@ var express = require('express');
 var db = require("../models");
 var passport = require("../config/passportConfig");
 var request = require("request")
+var isLoggedIn = require("../middleware/isLoggedIn");
 var router = express.Router();
 require('dotenv').config();
 
 // GET / - Display all movies in user's list
-router.get("/", function(req, res) {
+router.get("/", isLoggedIn ,function(req, res) {
 	db.user.findById(req.user.id).then(function(user) {
 		user.getMovies().then(function(movies) {
 			res.render("user_movies/index", {movies: movies, user: user});
@@ -46,11 +47,12 @@ router.post("/", function(req, res) {
 	})
 });
 
-router.delete("/", function(req, res) {
+router.delete("/:id", function(req, res) {
+	console.log("HIT HIT HIT!");
 	db.usersMovies.destroy({
 		where: {
 			userId: req.user.id,
-			movieId: req.body.id
+			movieId: req.params.id
 		}
 	}).then(function(data) {
 		res.sendStatus(200);

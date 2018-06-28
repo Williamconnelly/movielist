@@ -15,6 +15,7 @@
 		<p>Runtime: <%= movie.Runtime %></p>
 	</div>
 	<div class="misc-col">
+		<!-- Renders based on current user and only if they have the movie in their list -->
 		<% if (currentUser && user_movie.length > 0) { %>
 		<p>Current Score: <%=user_movie[0].rating%></p>
 		<form action="#">

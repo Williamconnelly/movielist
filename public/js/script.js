@@ -6,5 +6,14 @@ $(document).ready(function(){
 	});
 	$('.materialboxed').materialbox();
     $('.rating-select').formSelect();
-    $('select').material_select();
+    $(".delete").on("click", function(e) {
+		e.preventDefault();
+		var url = $(this).attr("href");
+		$.ajax({
+			method: "DELETE",
+			url: url
+		}).done(function(data) {
+			window.location = "/user_movies";
+		});
+	});
 });
