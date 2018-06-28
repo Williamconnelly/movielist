@@ -52,70 +52,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	position: relative;
 }
 
-#movies img {
-  	max-height: 240px;
-}
-
-#movies {
-	text-align: center;
-	padding: 0;
-	margin-top: 1em;
-}
-
-.card {
-	border-radius: 12px;
-}
-
-.card .card-content {
-	height: 19.3em;
-	padding: 0;
-	padding-top: 0.4em;
-	padding-left: 0.3em;
-	padding-right: 0.3em;
-	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
-	background-color: #14181d;
-	border-radius: 12px
-}
-
-.card .card-action {
-	padding: 0;
-	border: 0;
-	position: relative;
-	padding-bottom: 0.6em;
-	height: 0;
-}
-
-.movie-button {
-	border: 1px solid white;
-	margin-top: 0.3em;
-}
-
-.card-action input[type=submit] {
-	color: white;
-}
-
-.card-action form {
-	display: inline-block;
-}
-
-@media (max-width: 600px) {
-	#movies .row .col {
-		padding: 0.3em .75rem;
-	}
-}
-
-@media (max-width: 1200px) {
-	.card .card-content {
-		height: 20.4em;
-	}
-}
-
-.material-tooltip {
-	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
-	background-color: #eaf1f6
-	border-radius: 5px;
-}
-
 .alert-card {
 	width: 70%;
 	background-color: white;
@@ -132,7 +68,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	display: grid;
 	grid-template-columns: 7fr 10fr 5fr;
     grid-template-rows: 5em 10fr;
-    grid-template-areas: "title year ."
+    grid-template-areas: "title . year"
     					 "poster info misc";
     /*background: linear-gradient(0deg, rgba(14,30,38,1) 0%, rgba(55,96,135,1) 100%);*/	
     background-color: #14181d;
@@ -208,24 +144,73 @@ ul.dropdown-content.select-dropdown li span {
 	text-align: center;
 	background-color: white;
 	border-radius: 5px;
-	padding-top: 0.2em;
-}
+}	
 
 .dropdown-content li>a, .dropdown-content li>span {
 	text-align: center;
 }
 
+#movie-index {
+	padding: 20px;
+}
 
+#movie-index img {
+	max-height: 240px
+}
 
+#button-grid {
+	grid-area: buttons;
+	display: grid;
+	grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "add rating show";
+}
 
+.rating-button {
+	grid-area: rating;
+	display: inline-block;
+}
 
+.select-rating {
+	display: inline-block;
+}
 
+.add-button {
+	grid-area: add;
+}
 
+.show-button {
+	grid-area: show;
+}
 
+.select-wrapper input.select-dropdown {
+	width: 70%;
+	display: inline-block;
+	height: 40%;
+	background-color: transparent;
+	border: 0;
+}
 
+.select-wrapper {
+	text-align: center;
+}
 
+.select-wrapper .caret {
+	display: none;
+}
 
+.image-container {
+	grid-area: poster;
+}
 
+.movie-container {
+	display: grid;
+	grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "poster"
+    					 "buttons";
+   	margin-bottom: 2em;
+}
 
 
 

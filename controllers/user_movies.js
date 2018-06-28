@@ -18,7 +18,7 @@ router.get("/", isLoggedIn ,function(req, res) {
 // POST / - Add selected movie to user's list in db
 router.post("/", function(req, res) {
 	var movie = req.body;
-	console.log(movie);
+	console.log("Checking form input", movie);
 	db.user.find({
 		where: {
 			id: req.user.id
