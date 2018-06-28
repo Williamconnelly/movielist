@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('.tooltipped').tooltip({
 		exitDelay: 0, 
-		enterDelay: 300, 
+		enterDelay: 100, 
 		margin: -8
 	});
 	$('.materialboxed').materialbox();

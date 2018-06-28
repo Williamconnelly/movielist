@@ -2,7 +2,7 @@
 	<div class="row">	
 		<% movies.forEach(function(movie) { %>
 				<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie") { %>
-					<div class="col m3 s6 movie-container">
+					<div class="col m3 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="image-container">
 							<img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>">
 						</div>
@@ -12,26 +12,11 @@
 										<input type="hidden" name="title" value="<%=movie.Title%>">
 										<input type="hidden" name="poster" value="<%=movie.Poster%>">
 										<input type="hidden" name="year" value="<%=movie.Year%>">
+										<input type="hidden" name="rating" value=10>
 										<input type="hidden" name="type" value="<%=movie.Type%>">
 										<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
 											<div class="add-button">
 												<input type="submit" class="waves-effect waves-light" value="Add">
-											</div>
-											<div class="rating-button">
-												<select class="input-field rating-select" name="rating">
-													<option value="0" disabled selected>Rate</option>
-													<option value="0">None</option>
-													<option value="1">1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-													<option value="4">4</option>
-													<option value="5">5</option>
-													<option value="6">6</option>
-													<option value="7">7</option>
-													<option value="8">8</option>
-													<option value="9">9</option>
-													<option value="10">10</option>
-												</select>
 											</div>
 									</form>
 								<% } else { %>
@@ -49,33 +34,3 @@
 		<% }) %>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
