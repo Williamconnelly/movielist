@@ -161,7 +161,7 @@ ul.dropdown-content.select-dropdown li span {
 #button-grid {
 	grid-area: buttons;
 	display: grid;
-	grid-template-columns: 1fr 2fr 3fr;
+	grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "add rating show";
 }
@@ -185,7 +185,7 @@ ul.dropdown-content.select-dropdown li span {
 
 .select-wrapper input.select-dropdown {
 	width: 70%;
-	display: inline-block;
+	/*display: inline-block;*/
 	height: 40%;
 	background-color: transparent;
 	border: 0;
