@@ -11,24 +11,27 @@
 		<p>Runtime: <%= movie.Runtime %></p>
 	</div>
 	<div class="misc-col">
-		<select class="input-field rating-select col m6 s2 input-button" name="rating">
-			<label>Rating</label>
-			<option value="0" disabled selected>Rating</option>
-			<option value="0">Unrated</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-		</select>
-		<% if (currentUser) { %>
-		<p><%=user_movie[0].rating%></p>
+		<% if (currentUser && user_movie.length > 0) { %>
+		<p>Current Score: <%=user_movie[0].rating%></p>
 		<% }; %>
+		<form action="#">
+			<select class="input-field rating-select col m6 s2 input-button" name="rating">
+				<label>Rating</label>
+				<option value="0" disabled selected>Rating</option>
+				<option value="0">Unrated</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+			<option value="10">10</option>
+			</select>
+			<input type="submit" value="Update">
+		</form>
 	</div>
 </div>
 

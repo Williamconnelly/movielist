@@ -24,7 +24,6 @@ router.get("/:id", function(req, res) {
 	if (req.user) {
 		db.user.findById(req.user.id).then(function(user) {
 			user.getMovies({where: {api_id: req.params.id}}).then(function(user_movie) {
-				console.log("hello hello hello", user_movie[0].rating);
 				request({
 					url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id
 				}, function(error, response, body) {
