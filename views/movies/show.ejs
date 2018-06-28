@@ -1,19 +1,22 @@
 <div class="movie-grid">
+	<div class="title-col">
+		<h3><%= movie.Title %></h3>
+	</div>
+	<div class="year-col">
+		<h3>(<%= movie.Year %>)</h3>
+	</div>
 	<div class="poster-col">
 		<img src="<%= movie.Poster %>">
 	</div>
 	<div class="info-col">
-		<h3><%= movie.Title %></h3>
-		<p><%= movie.Year %></p>
-		<p>Director: <%= movie.Director %></p>
 		<p><%= movie.Plot %></p>
+		<p>Director: <%= movie.Director %></p>
 		<p><%= movie.Genre %></p>
 		<p>Runtime: <%= movie.Runtime %></p>
 	</div>
 	<div class="misc-col">
 		<% if (currentUser && user_movie.length > 0) { %>
 		<p>Current Score: <%=user_movie[0].rating%></p>
-		<% }; %>
 		<form action="#">
 			<select class="input-field rating-select col m6 s2 input-button" name="rating">
 				<label>Rating</label>
@@ -32,6 +35,7 @@
 			</select>
 			<input type="submit" value="Update">
 		</form>
+		<% }; %>
 	</div>
 </div>
 

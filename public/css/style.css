@@ -131,8 +131,9 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	margin-top: 1em;
 	display: grid;
 	grid-template-columns: 7fr 10fr 5fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "poster info misc";
+    grid-template-rows: 5em 10fr;
+    grid-template-areas: "title year ."
+    					 "poster info misc";
     /*background: linear-gradient(0deg, rgba(14,30,38,1) 0%, rgba(55,96,135,1) 100%);*/	
     background-color: #14181d;
     padding: 1em;
@@ -141,7 +142,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 .movie-grid p {
 	/*border: 2px solid white;*/
-	padding: 1em;
 	border-radius: 5px;
 	color: white;
 }
@@ -164,6 +164,21 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	height: 41em;
 }
 
+.title-col {
+	grid-area: title;
+	text-align: center;
+}
+
+.year-col {
+	grid-area: year;
+	text-align: left;
+}
+
+.year-col h3 {
+	margin: 0;
+	font-size: 1em;
+}
+
 .info-col {
 	grid-area: info;
 	margin-left: 1em;
@@ -176,10 +191,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 .index-movie {
 	border-radius: 0.5em;
-}
-
-#wrapper {
-	/*background-color: #14181d;*/
 }
 
 table.highlight tbody tr:hover {
