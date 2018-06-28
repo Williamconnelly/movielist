@@ -5,6 +5,6 @@ $(document).ready(function(){
 		margin: -8
 	});
 	$('.materialboxed').materialbox();
-	$('.dropdown-trigger').dropdown();
     $('.rating-select').formSelect();
+    $('select').material_select();
 });

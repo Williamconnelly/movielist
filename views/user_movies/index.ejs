@@ -1,5 +1,5 @@
 <h1><%=user.name%>'s List</h1>
-	
+
 <table class="highlight">
 	<thead>
 		<tr>
@@ -8,6 +8,7 @@
 			<th>Rating</th>
 			<th>Type</th>
 			<th>Year</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -18,7 +19,7 @@
 				<td><%=movie.rating%></td>
 				<td><%=movie.type%></td>
 				<td><%=movie.year%></td>
-				<td><a href="#">Delete</a></td>
+				<td><a href="#">Remove</a></td>
 			</tr>
 		<% }) %>	
 	</tbody>

@@ -171,6 +171,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 .misc-col {
 	grid-area: misc;
+	text-align: center;
 }
 
 .index-movie {
@@ -189,10 +190,19 @@ ul.dropdown-content.select-dropdown li span {
     color: black;
 }
 
+.select-wrapper input.select-dropdown {
+	width: 80%;
+	margin: 0 auto;
+	color: black;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+	padding-top: 0.2em;
+}
 
-
-
-
+.dropdown-content li>a, .dropdown-content li>span {
+	text-align: center;
+}
 
 
 
