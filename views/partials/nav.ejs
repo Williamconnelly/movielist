@@ -1,6 +1,7 @@
 <nav>
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">Movies</a>
+    <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li>
         <form action="/movies" method="POST" class="input-field">
@@ -18,3 +19,19 @@
     </ul>
   </div>
 </nav>
+
+<ul class="sidenav" id="sidenav">
+  <li>
+    <form action="/movies" method="POST" class="input-field">
+       <i class="material-icons prefix" style="top: 0.2rem;">search</i>
+      <input type="text" name="movie_search" placeholder="Search" autocomplete="off" id="m-searchbar">
+    </form>
+  </li>
+  <% if (currentUser) { %>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/auth/logout">Logout</a></li>
+  <% } else { %>
+    <li><a href="/auth/login">Login</a></li>
+    <li><a href="/auth/signup">Create Account</a></li>
+  <% } %>
+</ul>

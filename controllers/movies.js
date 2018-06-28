@@ -10,6 +10,7 @@ router.post("/", function(req, res) {
 	request({
 		url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&s=" + req.body.movie_search
 	}, function(error, response, body) {
+		console.log("THIS IS WHAT YOU ARE LOOKING FOR", body)
 		if (!error && response.statusCode === 200) {
 			var movies = JSON.parse(body);
 			res.render("movies/index", {movies: movies.Search});

@@ -5,6 +5,7 @@ $(document).ready(function(){
 		margin: -8
 	});
 	$('.materialboxed').materialbox();
+	$('.sidenav').sidenav();
     $('.rating-select').formSelect();
     $(".delete").on("click", function(e) {
 		e.preventDefault();
