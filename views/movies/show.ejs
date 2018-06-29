@@ -9,33 +9,34 @@
 		<img src="<%= movie.Poster %>">
 	</div>
 	<div class="info-col">
-		<p><%= movie.Plot %></p>
-		<p>Director: <%= movie.Director %></p>
-		<p><%= movie.Genre %></p>
-		<p>Runtime: <%= movie.Runtime %></p>
+		<h5><%= movie.Plot %></h5>
+		<h6>Director: <%= movie.Director %></h6>
+		<h6><%= movie.Genre %></h6>
+		<h6>Runtime: <%= movie.Runtime %></h6>
 	</div>
-	<div class="misc-col">
+	<div class="rating-col">
 		<!-- Renders based on current user and only if they have the movie in their list -->
 		<% if (currentUser && user_movie.length > 0) { %>
-		<p>Current Score: <%=user_movie[0].rating%></p>
-		<form action="#">
-			<select class="input-field rating-select col m6 s2 input-button" name="rating">
-				<label>Rating</label>
-				<option value="0" disabled selected>Rating</option>
-				<option value="0">Unrated</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-			<option value="10">10</option>
-			</select>
-			<input type="submit" value="Update">
-		</form>
+		<h5>Current Rating: <%=user_movie[0].rating%></h5>
+		<form method="POST" action="/user_movies/<%= movie.id %>" class="updateScore">
+						<select class="browser-default" name="rating">
+							<option value="0" disabled selected>Update Rating</option>
+						    <option value="1">1</option>
+						    <option value="2">2</option>
+						    <option value="3">3</option>
+						    <option value="4">4</option>
+						    <option value="5">5</option>
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						    <option value="10">10</option>
+						</select>
+						<input type="hidden" name="id" value="<%=movie.id%>">
+						<div class="modal-footer">
+      						<button type="submit" class="modal-close waves-effect waves-green btn-flat">Update</button>
+    					</div>
+      				</form>
 		<% }; %>
 	</div>
 </div>

@@ -73,18 +73,25 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	display: grid;
 	grid-template-columns: 7fr 10fr 5fr;
     grid-template-rows: 5em 10fr;
-    grid-template-areas: "title . year"
-    					 "poster info misc";
+    grid-template-areas: "title title year"
+    					 "poster info rating";
     /*background: linear-gradient(0deg, rgba(14,30,38,1) 0%, rgba(55,96,135,1) 100%);*/	
     background-color: #14181d;
     padding: 1em;
     border-radius: 1em;
 }
 
-.movie-grid p {
+.movie-grid h5 {
 	/*border: 2px solid white;*/
 	border-radius: 5px;
 	color: white;
+}
+
+.movie-grid h6 {
+	/*border: 2px solid white;*/
+	border-radius: 5px;
+	color: white;
+	margin-top: 4em;
 }
 
 .movie-grid h3 {
@@ -97,7 +104,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	border-radius: 0.5em;
 	height: 25em;
 	margin: 0 auto;
-	margin-top: 3em;
+	margin-top: 1.3em;
 }
 
 .poster-col {
@@ -108,12 +115,13 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 .title-col {
 	grid-area: title;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .year-col {
 	grid-area: year;
-	text-align: left;
+	font-size: 2em;
+	text-align: center;
 }
 
 .year-col h3 {
@@ -126,8 +134,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	margin-left: 1em;
 }
 
-.misc-col {
-	grid-area: misc;
+.rating-col {
+	grid-area: rating;
 	text-align: center;
 }
 
@@ -169,7 +177,7 @@ ul.dropdown-content.select-dropdown li span {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "add show .";
+    grid-template-areas: "add rating show";
 }
 
 .rating-button {
@@ -177,8 +185,12 @@ ul.dropdown-content.select-dropdown li span {
 	padding-left: 2.4em;
 }
 
-.select-rating {
-
+#button-grid select {
+	height: 1.5em;
+	width: 4em;
+	text-align: center;
+	margin: 0 auto;
+	background-color: transparent;
 }
 
 .add-button {
@@ -188,21 +200,11 @@ ul.dropdown-content.select-dropdown li span {
 
 .show-button {
 	grid-area: show;
-	text-align: center;
-}
-
-.select-wrapper input.select-dropdown {
-	height: 40%;
-	background-color: transparent;
-	border: 0;
+	text-align: left;
 }
 
 .select-wrapper {
 	text-align: center;
-}
-
-.select-wrapper .caret {
-	display: none;
 }
 
 .image-container {
@@ -217,15 +219,20 @@ ul.dropdown-content.select-dropdown li span {
     grid-template-areas: "poster"
     					 "buttons";
    	margin-bottom: 2em;
-   	/*height: 19em;*/
 }
 
 .material-tooltip {
 	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
-	background-color: #eaf1f6
+	background-color: #eaf1f6;
 	border-radius: 5px;
 }
 
 .sidenav {
 	margin-top: 2em;
 }
+
+.no-user {
+	grid-area: rating;
+	text-align: center;
+}
+

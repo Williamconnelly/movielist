@@ -59,6 +59,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 			console.log(sum);
 		})
 	}).then(function() {
+		// Finds the total number of movies with a rating (1+) in a user's list
 		db.movie.findAndCount({where: {
 		'rating': {[Op.gt]: 0}},
   		include: [
@@ -73,7 +74,6 @@ app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile', {userAverage: averageScore});
 	})
 	})
-	// Finds the total number of movies with a rating (1+) in a user's list
 });
 
 app.use('/auth', require('./controllers/auth'));
