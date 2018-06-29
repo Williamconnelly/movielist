@@ -60,10 +60,10 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .alert-card {
 	width: 70%;
 	background-color: white;
+	border-radius: 1em;
 }
 
 .alert-card .card-content{
-	height: 3em;
 	line-height: 2em;
 	text-align: center;
 }

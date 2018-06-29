@@ -12,7 +12,6 @@ router.post("/", function(req, res) {
 	}, function(error, response, body) {
 		if (!error && response.statusCode === 200) {
 			var movies = JSON.parse(body);
-			console.log(movies.Response)
 			if (movies.Response === "False") {
 				res.render("404");
 			} else {
@@ -34,7 +33,6 @@ router.get("/:id", function(req, res) {
 				}, function(error, response, body) {
 					if (!error && response.statusCode === 200) {
 						var movie = JSON.parse(body);
-						console.log(movie);
 						res.render("movies/show", {movie: movie, user_movie: user_movie});
 					} else {
 						console.log(error, response);

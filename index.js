@@ -3,9 +3,12 @@ var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require("express-session");
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 var passport = require("./config/passportConfig");
 var isLoggedIn = require("./middleware/isLoggedIn");
 var flash = require("connect-flash");
+var db = require("./models");
 
 var app = express();
 
@@ -43,6 +46,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
+	db.movie.findAndCount({where: {
+		'rating': {[Op.gt]: 1}},
+  		include: [
+     		{ model: db.user, where: { id: req.user.id }}
+  		]
+	}).then(function(result) {
+		console.log("COUNT RESULT: ", result.count);
+	})
   res.render('profile');
 });
 
