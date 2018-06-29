@@ -33,13 +33,10 @@ $(document).ready(function(){
 			window.location = "/user_movies";
 		});
 	});
-});
-
-var sort = function() {
+	var sort = function() {
 	// sort by value
 	movies.sort(function (a, b) {
-  	return a.rating - b.rating;
-  	console.log(movies);
+  		return b.rating - a.rating;
+	});
+};
 });
-
-}

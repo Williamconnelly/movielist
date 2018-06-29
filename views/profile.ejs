@@ -5,4 +5,14 @@
 <br />
 <a href="/user_movies">Your Movies</a>
 
+<form method="GET" action="/user_movies">
+	<input type="hidden" name="sort" value="Score">
+	<button type="submit" class="waves-effect waves-green btn">Update</button>
+</form>
+
+<form method="GET" action="/user_movies">
+	<input type="hidden" name="sort" value="Alph">
+	<button type="submit" class="waves-effect waves-green btn">Update</button>
+</form>
+
 <h3>Average Score: <%= userAverage %></h3>
