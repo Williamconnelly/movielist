@@ -67,6 +67,9 @@ app.get('/profile', isLoggedIn, function(req, res) {
 	}).then(function(result) {
 		var numMovies = result.count;
 		var averageScore = (sum/numMovies).toFixed(2);
+		if (averageScore === "NaN") {
+			averageScore = 0;
+		}
 		res.render('profile', {userAverage: averageScore});
 	})
 	})
