@@ -54,6 +54,21 @@ app.get('/profile', isLoggedIn, function(req, res) {
 	}).then(function(result) {
 		console.log("COUNT RESULT: ", result.count);
 	})
+
+	db.movie.findAll({where: {
+		'rating': {[Op.gt]: 1}},
+  		include: [
+     		{ model: db.user, where: { id: req.user.id }}
+  		]
+	}).then(function(result) {
+		var sum = 0;
+		result.forEach(function(movie, i) {
+			sum+= movie.rating;
+			console.log(sum);
+		})
+	})
+
+
   res.render('profile');
 });
 
