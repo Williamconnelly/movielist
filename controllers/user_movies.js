@@ -48,7 +48,6 @@ router.post("/", function(req, res) {
 });
 
 router.delete("/:id", function(req, res) {
-	console.log("HIT HIT HIT!");
 	db.usersMovies.destroy({
 		where: {
 			userId: req.user.id,
@@ -58,5 +57,26 @@ router.delete("/:id", function(req, res) {
 		res.sendStatus(200);
 	});
 });
+
+router.put("/:id", function(req, res) {
+	db.movie.update({
+		rating: req.body.rating
+	}, {
+		where: {id: req.params.id}
+	}).then(function(data) {
+		res.sendStatus(200);
+	});
+});
+
+// app.put("/:id", function(req, res) {
+//   var id = req.params.id;
+//   db.movie.update({
+//     rating: req.body.rating,
+//   }, {
+//     where: {id: index}
+//   }).then(function(data) {
+//     res.sendStatus(200);
+//   });
+// });
 
 module.exports = router;

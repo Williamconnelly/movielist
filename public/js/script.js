@@ -6,6 +6,7 @@ $(document).ready(function(){
 	});
 	$('.materialboxed').materialbox();
 	$('.sidenav').sidenav();
+	$('.modal').modal();
     $('.rating-select').formSelect();
     // Delete route to handle removing a user's association with a movie
     $(".delete").on("click", function(e) {
@@ -16,6 +17,19 @@ $(document).ready(function(){
 			url: url
 		}).done(function(data) {
 			window.location = "/user_movies";
+		});
+	});
+	$(".update").on("submit", function(e) {
+		e.preventDefault();
+		var newData = $(this).serialize();
+		var url = $(this).attr("action");
+		$.ajax({
+			method: "PUT",
+			url: url,
+			data: newData
+		}).done(function(data) {
+			console.log(data);
+			window.location = "/articles";
 		});
 	});
 });

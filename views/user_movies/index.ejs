@@ -12,15 +12,39 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% movies.forEach(function(movie) { %>
+		<% movies.forEach(function(movie, i) { %>
 			<tr>
 				<td><img src="<%=movie.poster%>" class="square" style="height: 6em; border-radius: 0.5em"></td>
 				<td><a href="/movies/<%=movie.api_id%>"><%=movie.title%></td>
-				<td><%=movie.rating%></td>
+				<td><a href="#modal<%=i%>" class="modal-trigger"><%=movie.rating%></a></td>
 				<td><%=movie.type%></td>
 				<td><%=movie.year%></td>
 				<td><a class="delete" href="/user_movies/<%= movie.id %>">Remove</a></td>
 			</tr>
+			<div id="modal<%=i%>" class="modal">
+    			<div class="modal-content">
+      				<h4>Change Score:</h4>
+      				<p>Current Score: <%=movie.rating%></p>
+      				<form>
+						  <select class="browser-default">
+						    <option value="0" disabled selected>Choose New Rating</option>
+						    <option value="1">1</option>
+						    <option value="2">2</option>
+						    <option value="3">3</option>
+						    <option value="4">4</option>
+						    <option value="5">5</option>
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						    <option value="10">10</option>
+						  </select>
+      				</form>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect waves-green btn-flat">Update</a>
+    			</div>
+			</div>
 		<% }) %>	
 	</tbody>
 </table>
