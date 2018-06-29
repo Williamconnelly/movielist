@@ -68,15 +68,4 @@ router.put("/:id", function(req, res) {
 	});
 });
 
-// app.put("/:id", function(req, res) {
-//   var id = req.params.id;
-//   db.movie.update({
-//     rating: req.body.rating,
-//   }, {
-//     where: {id: index}
-//   }).then(function(data) {
-//     res.sendStatus(200);
-//   });
-// });
-
 module.exports = router;

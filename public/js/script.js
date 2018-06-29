@@ -19,9 +19,10 @@ $(document).ready(function(){
 			window.location = "/user_movies";
 		});
 	});
-	$(".update").on("submit", function(e) {
+	$(".updateScore").on("submit", function(e) {
 		e.preventDefault();
 		var newData = $(this).serialize();
+		console.log(newData);
 		var url = $(this).attr("action");
 		$.ajax({
 			method: "PUT",
@@ -29,7 +30,7 @@ $(document).ready(function(){
 			data: newData
 		}).done(function(data) {
 			console.log(data);
-			window.location = "/articles";
+			window.location = "/user_movies";
 		});
 	});
 });
