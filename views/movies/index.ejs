@@ -1,8 +1,8 @@
 <div id="movie-index">
 	<div class="row">	
 		<% movies.forEach(function(movie) { %>
-				<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie") { %>
-					<div class="col m3 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
+				<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie" && movie.Runtime !== "N/A") { %>
+					<div class="col m4 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="image-container">
 							<img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>">
 						</div>

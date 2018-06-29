@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$('.materialboxed').materialbox();
 	$('.sidenav').sidenav();
     $('.rating-select').formSelect();
+    // Delete route to handle removing a user's association with a movie
     $(".delete").on("click", function(e) {
 		e.preventDefault();
 		var url = $(this).attr("href");

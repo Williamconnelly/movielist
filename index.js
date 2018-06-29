@@ -46,30 +46,30 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
-	db.movie.findAndCount({where: {
-		'rating': {[Op.gt]: 1}},
-  		include: [
-     		{ model: db.user, where: { id: req.user.id }}
-  		]
-	}).then(function(result) {
-		console.log("COUNT RESULT: ", result.count);
-	})
-
+	var sum = 0;
+	// Finds the total sum of scores in a user's movie list
 	db.movie.findAll({where: {
-		'rating': {[Op.gt]: 1}},
+		'rating': {[Op.gt]: 0}},
   		include: [
      		{ model: db.user, where: { id: req.user.id }}
   		]
 	}).then(function(result) {
-		var sum = 0;
 		result.forEach(function(movie, i) {
 			sum+= movie.rating;
 			console.log(sum);
 		})
 	})
-
-
-  res.render('profile');
+	// Finds the total number of movies with a rating (1+) in a user's list
+	db.movie.findAndCount({where: {
+		'rating': {[Op.gt]: 0}},
+  		include: [
+     		{ model: db.user, where: { id: req.user.id }}
+  		]
+	}).then(function(result) {
+		var numMovies = result.count;
+		var averageScore = (sum/numMovies).toFixed(2);
+		res.render('profile', {userAverage: averageScore});
+	})
 });
 
 app.use('/auth', require('./controllers/auth'));
