@@ -34,3 +34,12 @@ $(document).ready(function(){
 		});
 	});
 });
+
+var sort = function() {
+	// sort by value
+	movies.sort(function (a, b) {
+  	return a.rating - b.rating;
+  	console.log(movies);
+});
+
+}
