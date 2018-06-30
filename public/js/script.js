@@ -33,10 +33,4 @@ $(document).ready(function(){
 			window.location = "/user_movies";
 		});
 	});
-	var sort = function() {
-	// sort by value
-	movies.sort(function (a, b) {
-  		return b.rating - a.rating;
-	});
-};
 });
