@@ -1,5 +1,45 @@
 <h1><%=user.name%>'s List</h1>
 
+<nav>
+    <div class="nav-wrapper sort-nav">
+  		<a href="#" class="brand-logo">Sort</a>
+    	<ul id="nav-mobile" class="right hide-on-med-and-down">
+    		<% if (sortBy !== "ScoreDes" || sortBy === 0) { %>
+	        <li>
+	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
+					<input type="hidden" name="sort" value="ScoreDes">
+					<button type="submit" class="waves-effect waves-green btn-flat">Score</button>
+				</form>
+			</li>
+			<% } %>
+			<% if (sortBy !== "ScoreAsc" && sortBy !== 0 && sortBy !== "AlphDes" && sortBy !== "AlphAsc") { %>
+			<li>
+	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
+					<input type="hidden" name="sort" value="ScoreAsc">
+					<button type="submit" class="waves-effect waves-green btn-flat">Score</button>
+				</form>
+			</li>
+			<% } %>
+			<% if (sortBy !== "AlphAsc" || sortBy === 0 && sortBy) { %>
+	        <li>
+	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
+					<input type="hidden" name="sort" value="AlphAsc">
+					<button type="submit" class="waves-effect waves-green btn-flat">Title</button>
+				</form>
+			</li>
+			<% } %>
+			<% if (sortBy !== "AlphDes" && sortBy !== 0 && sortBy !== "ScoreAsc" && sortBy !== "ScoreDes") { %>
+			<li>
+				<form method="POST" action="/user_movies/sorted" class="sort-button">
+					<input type="hidden" name="sort" value="AlphDes">
+					<button type="submit" class="waves-effect waves-green btn-flat">Title</button>
+				</form>
+			</li>
+			<% } %>
+    	</ul>
+    </div>
+</nav>
+
 <table class="highlight">
 	<thead>
 		<tr>

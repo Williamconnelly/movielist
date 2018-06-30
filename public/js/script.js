@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	// Materialize Inits
 	$('.tooltipped').tooltip({
 		exitDelay: 0, 
 		enterDelay: 100, 
@@ -19,6 +20,7 @@ $(document).ready(function(){
 			window.location = "/user_movies";
 		});
 	});
+	// Put route to handle updating a user's score with an associated movie
 	$(".updateScore").on("submit", function(e) {
 		e.preventDefault();
 		var newData = $(this).serialize();
