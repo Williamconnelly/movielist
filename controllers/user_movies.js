@@ -51,27 +51,50 @@ router.post("/sorted", isLoggedIn, function(req, res) {
 	db.user.findById(req.user.id).then(function(user) {
 		user.getMovies().then(function(movies) {
 			var sortBy = req.body.sort;
-			if (sortBy === "AlphAsc") {
-				movies.sort(function(a, b) {
-					return a.title.localeCompare(b.title);
-				});
-			} else if (sortBy === "AlphDes") {
-				movies.sort(function(a, b) {
-					return b.title.localeCompare(a.title);
-				});
-			} else if (sortBy === "ScoreDes") {
-				movies.sort(function (a,b) {
-					return b.rating - a.rating
-				});
-			} else if (sortBy === "ScoreAsc") {
-				movies.sort(function (a,b) {
-					return a.rating - b.rating
-				});
+			switch(sortBy) {
+				case("AlphAsc"):
+					movies.sort(function(a, b) {
+						return a.title.localeCompare(b.title);
+					});
+						break;
+				case("AlphDes"):
+					movies.sort(function(a, b) {
+						return b.title.localeCompare(a.title);
+					});
+						break;
+				case("ScoreDes"):
+					movies.sort(function (a,b) {
+						return b.rating - a.rating
+					});
+						break;
+				case("ScoreAsc"):
+					movies.sort(function (a,b) {
+						return a.rating - b.rating
+					});
+						break;
 			}
+
+			// if (sortBy === "AlphAsc") {
+			// 	movies.sort(function(a, b) {
+			// 		return a.title.localeCompare(b.title);
+			// 	});
+			// } else if (sortBy === "AlphDes") {
+			// 	movies.sort(function(a, b) {
+			// 		return b.title.localeCompare(a.title);
+			// 	});
+			// } else if (sortBy === "ScoreDes") {
+			// 	movies.sort(function (a,b) {
+			// 		return b.rating - a.rating
+			// 	});
+			// } else if (sortBy === "ScoreAsc") {
+			// 	movies.sort(function (a,b) {
+			// 		return a.rating - b.rating
+			// 	});
+			// };
 			res.render("user_movies/index", {movies: movies, user: user, sortBy: sortBy});
-		})
-	})
-})
+		});
+	});
+});
 
 router.delete("/:id", function(req, res) {
 	db.usersMovies.destroy({
