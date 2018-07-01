@@ -88,9 +88,9 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 }
 
 .movie-grid h6 {
-	/*border: 2px solid white;*/
 	border-radius: 5px;
 	color: white;
+	margin-top: 2em;
 }
 
 .movie-grid h3 {
@@ -168,13 +168,13 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	display: grid;
 	grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ""
 }
 
 .rating-col select {
 	width: 50%;
 	margin: 0 auto;
 	margin-bottom: 1em;
+	margin-top: 0.3em;
 }
 
 .user-rating {
@@ -216,7 +216,7 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 #movie-index img {
-	max-height: 240px
+	max-height: 240px;
 }
 
 #button-grid {
@@ -276,6 +276,7 @@ ul.dropdown-content.select-dropdown li span {
     grid-template-areas: "poster"
     					 "buttons";
    	margin-bottom: 2em;
+   	height: 18em;
 }
 
 .material-tooltip {
