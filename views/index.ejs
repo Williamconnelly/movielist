@@ -1,18 +1,24 @@
 <div class="large-search center-screen">
 	<form action="/movies" method="POST" class="landing-form">
+		<img class="search-logo" src="/img/Logo.png">
+		<br>
 		<input type="text" name="movie_search" placeholder="Search" autocomplete="off">
 		<% if (currentUser) { %>
-			<a class="waves-effect waves-light btn-large blue landing-button profile-button">
-			<i class="material-icons left">person</i>Profile</a>
-			<a class="waves-effect waves-light btn-large blue landing-button list-button">
-			<i class="material-icons left">local_movies</i>Movie List</a>
-			<a class="waves-effect waves-light btn-large blue landing-button logout-button">
-			<i class="material-icons left">account_circle</i>Logout</a>
+			<div class="button-index">
+				<a class="waves-effect waves-light btn-large blue landing-button profile-button">
+				<i class="material-icons left">person</i>Profile</a>
+				<a class="waves-effect waves-light btn-large blue landing-button list-button">
+				<i class="material-icons left">local_movies</i>Movie List</a>
+				<a class="waves-effect waves-light btn-large blue landing-button logout-button">
+				<i class="material-icons left">account_circle</i>Logout</a>
+			</div>
 		<% } else { %>
-			<a class="waves-effect waves-light btn-large blue landing-button login-button">
-			<i class="material-icons left">account_circle</i>Login</a>
-			<a class="waves-effect waves-light btn-large blue landing-button signup-button">
-			<i class="material-icons left">person_add</i>Create Account</a>
+			<div class="landing-bu">
+				<a class="waves-effect waves-light btn-large blue landing-button login-button">
+				<i class="material-icons left">account_circle</i>Login</a>
+				<a class="waves-effect waves-light btn-large blue landing-button signup-button">
+				<i class="material-icons left">person_add</i>Create Account</a>
+			</div>
 		<% } %>
 	</form>
 </div>
