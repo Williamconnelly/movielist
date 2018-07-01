@@ -71,8 +71,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .movie-grid {
 	margin-top: 1em;
 	display: grid;
-	grid-template-columns: 7fr 10fr 5fr;
-    grid-template-rows: 5em 10fr;
+	grid-template-columns: 6fr 10fr 6fr;
+    grid-template-rows: 7em 10fr;
     grid-template-areas: "title title year"
     					 "poster info rating";
     /*background: linear-gradient(0deg, rgba(14,30,38,1) 0%, rgba(55,96,135,1) 100%);*/	
@@ -133,10 +133,11 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	margin-left: 1em;
 	display: grid;
 	grid-template-columns: 1fr;
-    grid-template-rows: 11em 6em 6em 6em;
+    grid-template-rows: 11em 4em 4em 4em;
     grid-template-areas: "plot"
     					 "director"
     					 "genre"
+    					 "rated"
     					 "runtime";
 }
 
@@ -153,6 +154,10 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	grid-area: genre;
 }
 
+.rating-info {
+	grid-area: rated;
+}
+
 .runtime-info {
 	grid-area: runtime;	
 }
@@ -160,6 +165,25 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .rating-col {
 	grid-area: rating;
 	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ""
+}
+
+.rating-col select {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+}
+
+.user-rating {
+	color: #039be5 !important;
+}
+
+.rating-col button {
+	color: #039be5;
+	border: 1px solid white;
 }
 
 .index-movie {
@@ -201,6 +225,8 @@ ul.dropdown-content.select-dropdown li span {
 	grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "add rating show";
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .rating-button {
@@ -214,6 +240,14 @@ ul.dropdown-content.select-dropdown li span {
 	text-align: center;
 	margin: 0 auto;
 	background-color: transparent;
+}
+
+.movie-grid-button {
+	border: 0;
+	background-color: transparent;
+}
+
+.movie-grid-button:focus {
 }
 
 .add-button {
@@ -245,9 +279,9 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .material-tooltip {
-	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
-	background-color: #eaf1f6;
+	background-color: #14181e;
 	border-radius: 5px;
+	border: 2px solid white;
 }
 
 .sidenav {

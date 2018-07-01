@@ -2,7 +2,7 @@
 	<div class="row">	
 		<% movies.forEach(function(movie) { %>
 				<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie") { %>
-					<div class="col m4 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
+					<div class="col l4 m4 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="image-container">
 							<img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>">
 						</div>
@@ -16,7 +16,7 @@
 									<input type="hidden" name="type" value="<%=movie.Type%>">
 									<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
 										<div class="add-button">
-											<input type="submit" class="waves-effect waves-light" value="Add">
+											<input type="submit" class="movie-grid-button" value="Add">
 										</div>
 								</form>
 								<div class="select-button">
@@ -35,14 +35,14 @@
 									</select>
 								</div><div class="show-button">
 									<form action="/movies/<%=movie.imdbID%>" method="GET">
-										<input type="submit" class="waves-effect waves-light" value="Details">
+										<input type="submit" class="movie-grid-button" value="Details">
 										<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
 									</form>
 								</div>
 								<% } else { %>
 								<div class="show-button no-user">
 									<form action="/movies/<%=movie.imdbID%>" method="GET">
-										<input type="submit" class="waves-effect waves-light" value="Details">
+										<input type="submit" class="movie-grid-button" value="Details">
 										<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
 									</form>
 								</div>

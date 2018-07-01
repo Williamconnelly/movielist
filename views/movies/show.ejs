@@ -11,32 +11,42 @@
 	<div class="info-col">
 		<h5 class="plot-info"><%= movie.Plot %></h5>
 		<h6 class="director-info">Director: <%= movie.Director %></h6>
-		<h6 class="genre-info"><%= movie.Genre %></h6>
+		<h6 class="genre-info">Genre(s): <%= movie.Genre %></h6>
+		<h6 class="rating-info">Rated: <%= movie.Rated %></h6>
 		<h6 class="runtime-info">Runtime: <%= movie.Runtime %></h6>
 	</div>
 	<div class="rating-col">
 		<!-- Renders based on current user and only if they have the movie in their list -->
+		<% movie.Ratings.forEach(function(source) { %> 
+			<div class="rating-tab">
+				<h5><%=source.Source%></h5>
+				<h6><%=source.Value%></h6>
+			</div>
+		<% }) %>
 		<% if (currentUser && user_movie.length > 0) { %>
-		<h5>Current Rating: <%=user_movie[0].rating%></h5>
-		<form method="POST" action="/user_movies/<%= movie.id %>" class="updateScore">
-						<select class="browser-default" name="rating">
-							<option value="0" disabled selected>Update Rating</option>
-						    <option value="1">1</option>
-						    <option value="2">2</option>
-						    <option value="3">3</option>
-						    <option value="4">4</option>
-						    <option value="5">5</option>
-						    <option value="6">6</option>
-						    <option value="7">7</option>
-						    <option value="8">8</option>
-						    <option value="9">9</option>
-						    <option value="10">10</option>
-						</select>
-						<input type="hidden" name="id" value="<%=movie.id%>">
-						<div class="modal-footer">
-      						<button type="submit" class="modal-close waves-effect waves-green btn-flat">Update</button>
-    					</div>
-      				</form>
+		<div>
+			<h5 class="user-rating">Your Rating<h5>
+			<h6 class="user-rating"><%=user_movie[0].rating%>/10</h6>
+		</div>
+		<form method="POST" action="/user_movies/<%= user_movie[0].id %>" class="updateScore">
+			<select class="browser-default" name="rating">
+				<option value="0" disabled selected>Update Rating</option>
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+			    <option value="5">5</option>
+			    <option value="6">6</option>
+			    <option value="7">7</option>
+			    <option value="8">8</option>
+			    <option value="9">9</option>
+			    <option value="10">10</option>
+			</select>
+			<input type="hidden" name="id" value="<%=user_movie.id%>">
+			<div>
+				<button type="submit" class="waves-effect waves-green btn-flat">Update</button>
+			</div>
+		</form>
 		<% }; %>
 	</div>
 </div>
