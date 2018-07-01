@@ -91,7 +91,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	/*border: 2px solid white;*/
 	border-radius: 5px;
 	color: white;
-	margin-top: 4em;
 }
 
 .movie-grid h3 {
@@ -115,7 +114,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 .title-col {
 	grid-area: title;
-	/*text-align: center;*/
+	margin-left: 2.1em;
 }
 
 .year-col {
@@ -132,6 +131,30 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .info-col {
 	grid-area: info;
 	margin-left: 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+    grid-template-rows: 11em 6em 6em 6em;
+    grid-template-areas: "plot"
+    					 "director"
+    					 "genre"
+    					 "runtime";
+}
+
+.plot-info {
+	grid-area: plot;
+	margin-top: 1em;
+}
+
+.director-info {
+	grid-area: director;
+}
+
+.genre-info {
+	grid-area: genre;
+}
+
+.runtime-info {
+	grid-area: runtime;	
 }
 
 .rating-col {
@@ -272,4 +295,8 @@ div nav i.material-icons {
 	#nav-mobile {
 		text-align: center;
 	}
+}
+
+.link-blue {
+	color: #039be5;;
 }

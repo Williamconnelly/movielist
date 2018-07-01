@@ -2,14 +2,14 @@
 
 <nav class="sort-nav">
     <div class="nav-wrapper sort-nav-wrapper">
-  		<a href="/user_movies" class="brand-logo"><%=user.name%>'s List</a>
+  		<a href="/user_movies" class="brand-logo"><%=user.name%>'s Movie List</a>
     	<ul id="nav-mobile" class="right">
     		<!-- Sort By Score -->
     		<% if (sortBy !== "ScoreDes" || sortBy === 0) { %>
 	        <li>
 	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
 					<input type="hidden" name="sort" value="ScoreDes">
-					<button type="submit" class="waves-effect waves-black btn-flat">Score<i class="material-icons right">arrow_drop_down</i></button>
+					<button type="submit" class="waves-effect waves-green btn-flat">Score<i class="material-icons right">arrow_drop_down</i></button>
 				</form>
 			</li>
 			<% } %>

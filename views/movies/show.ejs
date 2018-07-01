@@ -9,10 +9,10 @@
 		<img src="<%= movie.Poster %>">
 	</div>
 	<div class="info-col">
-		<h5><%= movie.Plot %></h5>
-		<h6>Director: <%= movie.Director %></h6>
-		<h6><%= movie.Genre %></h6>
-		<h6>Runtime: <%= movie.Runtime %></h6>
+		<h5 class="plot-info"><%= movie.Plot %></h5>
+		<h6 class="director-info">Director: <%= movie.Director %></h6>
+		<h6 class="genre-info"><%= movie.Genre %></h6>
+		<h6 class="runtime-info">Runtime: <%= movie.Runtime %></h6>
 	</div>
 	<div class="rating-col">
 		<!-- Renders based on current user and only if they have the movie in their list -->
