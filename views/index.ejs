@@ -1,1 +1,18 @@
-<h1>Landing Page</h1>
+<div class="large-search center-screen">
+	<form action="/movies" method="POST" class="landing-form">
+		<input type="text" name="movie_search" placeholder="Search" autocomplete="off">
+		<% if (currentUser) { %>
+			<a class="waves-effect waves-light btn-large blue landing-button profile-button">
+			<i class="material-icons left">person</i>Profile</a>
+			<a class="waves-effect waves-light btn-large blue landing-button list-button">
+			<i class="material-icons left">local_movies</i>Movie List</a>
+			<a class="waves-effect waves-light btn-large blue landing-button logout-button">
+			<i class="material-icons left">account_circle</i>Logout</a>
+		<% } else { %>
+			<a class="waves-effect waves-light btn-large blue landing-button login-button">
+			<i class="material-icons left">account_circle</i>Login</a>
+			<a class="waves-effect waves-light btn-large blue landing-button signup-button">
+			<i class="material-icons left">person_add</i>Create Account</a>
+		<% } %>
+	</form>
+</div>

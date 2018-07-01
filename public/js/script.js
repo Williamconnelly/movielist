@@ -35,4 +35,20 @@ $(document).ready(function(){
 			window.location = "/user_movies";
 		});
 	});
+	// Landing Page Button Links
+	$(".login-button").on("click", function() {
+		window.location.href="/auth/login";
+	});
+	$(".signup-button").on("click", function() {
+		window.location.href="/auth/signup";
+	});
+	$(".profile-button").on("click", function() {
+		window.location.href="/profile";
+	});
+	$(".list-button").on("click", function() {
+		window.location.href="/user_movies";
+	});
+	$(".logout-button").on("click", function() {
+		window.location.href="/auth/logout";
+	});
 });

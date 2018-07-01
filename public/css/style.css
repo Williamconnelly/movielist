@@ -5,6 +5,7 @@ nav {
 
 body {
 	background-color: #eaf1f5;
+	/*background-image: url("/img/light_toast.png");*/
 	/*background-color: #14181d;*/
 	/*font-family: 'Encode Sans Condensed', sans-serif;*/
 }
@@ -61,6 +62,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	width: 70%;
 	background-color: white;
 	border-radius: 1em;
+	display: inline-block;
 }
 
 .alert-card .card-content{
@@ -337,4 +339,36 @@ div nav i.material-icons {
 
 .link-blue {
 	color: #039be5;;
+}
+
+.landing-form {
+	background-color: #14181e;
+	border-radius: 3em;
+	width: 80%;
+	padding: 5em 0 5em 0;
+}
+
+.large-search input {
+	border-bottom: 0px !important;
+	width: 80% !important;
+	background-color: white !important;
+	border-radius: 0.6em !important;
+	padding-left: 0.6em !important;
+	height: 2em !important;
+	font-size: 3em !important;
+	margin-bottom: 1em !important;
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.landing-button {
+	margin-right: 2em;
+	border-radius: 0.5em;
 }
