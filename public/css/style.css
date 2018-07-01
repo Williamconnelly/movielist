@@ -237,10 +237,16 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .sort-nav {
-	background-color: 
+	margin-top: 5em;
+	margin-bottom: 2em;
+	border-radius: 0.5em;
 }
 
-.sort-nav .btn-flat {
+.sort-nav-wrapper {
+	background-color: ;
+}
+
+.sort-nav-wrapper .btn-flat {
 	color: black;
 	padding: 0 1em;
 	background-color: white;
@@ -251,16 +257,10 @@ td, th {
 	padding: 5px 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
+div nav i.material-icons {
+	line-height: 1.4em;
+	margin: 0;
+}
 
 
 

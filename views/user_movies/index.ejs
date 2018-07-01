@@ -1,38 +1,57 @@
-<h1><%=user.name%>'s List</h1>
+<!-- <h1><%=user.name%>'s List</h1> -->
 
-<nav>
-    <div class="nav-wrapper sort-nav">
-  		<a href="#" class="brand-logo">Sort</a>
+<nav class="sort-nav">
+    <div class="nav-wrapper sort-nav-wrapper">
+  		<a href="/user_movies" class="brand-logo"><%=user.name%>'s List</a>
     	<ul id="nav-mobile" class="right hide-on-med-and-down">
+    		<!-- Sort By Score -->
     		<% if (sortBy !== "ScoreDes" || sortBy === 0) { %>
 	        <li>
 	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
 					<input type="hidden" name="sort" value="ScoreDes">
-					<button type="submit" class="waves-effect waves-green btn-flat">Score</button>
+					<button type="submit" class="waves-effect waves-black btn-flat">Score<i class="material-icons right">arrow_drop_down</i></button>
 				</form>
 			</li>
 			<% } %>
-			<% if (sortBy !== "ScoreAsc" && sortBy !== 0 && sortBy !== "AlphDes" && sortBy !== "AlphAsc") { %>
+			<% if (sortBy !== "ScoreAsc" && sortBy !== 0 && sortBy !== "AlphDes" && sortBy !== "AlphAsc" && sortBy !== "YearDes" && sortBy !== "YearAsc") { %>
 			<li>
 	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
 					<input type="hidden" name="sort" value="ScoreAsc">
-					<button type="submit" class="waves-effect waves-green btn-flat">Score</button>
+					<button type="submit" class="waves-effect waves-green btn-flat">Score<i class="material-icons right">arrow_drop_up</i></button>
 				</form>
 			</li>
 			<% } %>
-			<% if (sortBy !== "AlphAsc" || sortBy === 0 && sortBy) { %>
+			<!-- Sort By Alphabetized Title -->
+			<% if (sortBy !== "AlphAsc" || sortBy === 0) { %>
 	        <li>
 	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
 					<input type="hidden" name="sort" value="AlphAsc">
-					<button type="submit" class="waves-effect waves-green btn-flat">Title</button>
+					<button type="submit" class="waves-effect waves-green btn-flat">Title<i class="material-icons right">arrow_drop_up</i></button>
 				</form>
 			</li>
 			<% } %>
-			<% if (sortBy !== "AlphDes" && sortBy !== 0 && sortBy !== "ScoreAsc" && sortBy !== "ScoreDes") { %>
+			<% if (sortBy !== "AlphDes" && sortBy !== 0 && sortBy !== "ScoreAsc" && sortBy !== "ScoreDes" && sortBy !== "YearDes" && sortBy !== "YearAsc") { %>
 			<li>
 				<form method="POST" action="/user_movies/sorted" class="sort-button">
 					<input type="hidden" name="sort" value="AlphDes">
-					<button type="submit" class="waves-effect waves-green btn-flat">Title</button>
+					<button type="submit" class="waves-effect waves-green btn-flat">Title<i class="material-icons right">arrow_drop_down</i></button>
+				</form>
+			</li>
+			<% } %>
+			<!-- Sort By Year -->
+			<% if (sortBy !== "YearDes" || sortBy === 0) { %>
+	        <li>
+	        	<form method="POST" action="/user_movies/sorted" class="sort-button">
+					<input type="hidden" name="sort" value="YearDes">
+					<button type="submit" class="waves-effect waves-green btn-flat">Year<i class="material-icons right">arrow_drop_down</i></button>
+				</form>
+			</li>
+			<% } %>
+			<% if (sortBy !== "YearAsc" && sortBy !== "AlphDes" && sortBy !== "AlphAsc" && sortBy !== 0 && sortBy !== "ScoreAsc" && sortBy !== "ScoreDes") { %>
+			<li>
+				<form method="POST" action="/user_movies/sorted" class="sort-button">
+					<input type="hidden" name="sort" value="YearAsc">
+					<button type="submit" class="waves-effect waves-green btn-flat">Year<i class="material-icons right">arrow_drop_up</i></button>
 				</form>
 			</li>
 			<% } %>
