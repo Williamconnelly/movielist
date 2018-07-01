@@ -6,7 +6,7 @@ nav {
 body {
 	background-color: #eaf1f5;
 	/*background-color: #14181d;*/
-	font-family: 'Encode Sans Condensed', sans-serif;
+	/*font-family: 'Encode Sans Condensed', sans-serif;*/
 }
 	
 .form-container {
@@ -101,9 +101,12 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 .movie-grid img {
 	border-radius: 0.5em;
-	height: 25em;
 	margin: 0 auto;
 	margin-top: 1.3em;
+	max-width: 19em;
+    max-height: 27em;
+	width: auto;
+	height: auto;
 }
 
 .poster-col {
@@ -131,14 +134,14 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .info-col {
 	grid-area: info;
 	margin-left: 1em;
-	display: grid;
+/*	display: grid;
 	grid-template-columns: 1fr;
     grid-template-rows: 11em 4em 4em 4em;
     grid-template-areas: "plot"
     					 "director"
     					 "genre"
     					 "rated"
-    					 "runtime";
+    					 "runtime";*/
 }
 
 .plot-info {
