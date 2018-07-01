@@ -262,5 +262,14 @@ div nav i.material-icons {
 	margin: 0;
 }
 
-
-
+@media screen and (min-width: 300px) and (max-width: 992px) {
+	.sort-nav {
+		width: 23.5em;
+	}
+	.sort-nav a {
+		display: none;
+	}
+	#nav-mobile {
+		text-align: center;
+	}
+}

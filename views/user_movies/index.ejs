@@ -1,9 +1,9 @@
-<!-- <h1><%=user.name%>'s List</h1> -->
+<!-- <h1 class="toggleName"><%=user.name%>'s List</h1> -->
 
 <nav class="sort-nav">
     <div class="nav-wrapper sort-nav-wrapper">
   		<a href="/user_movies" class="brand-logo"><%=user.name%>'s List</a>
-    	<ul id="nav-mobile" class="right hide-on-med-and-down">
+    	<ul id="nav-mobile" class="right">
     		<!-- Sort By Score -->
     		<% if (sortBy !== "ScoreDes" || sortBy === 0) { %>
 	        <li>
