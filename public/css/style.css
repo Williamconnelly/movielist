@@ -414,7 +414,14 @@ div nav i.material-icons {
 }
 
 .profile-posters {
-	height: 12em;
+	height: 13em;
 	border-radius: 1em;
-	max-width: 100%;
+}
+
+.profile-posters img {
+	margin-bottom: 10em !important;
+}
+
+.profile-row div {
+	margin: 2em;
 }

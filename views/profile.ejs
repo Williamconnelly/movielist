@@ -4,9 +4,9 @@
 
 <h3>Average Score: <%= userAverage %></h3>
 
-<div class="row">
+<div class="row profile-row">
 	<% movies.forEach(function(movie, i) { %>
-		<div class="col s12 m3 l2">
+		<div class="col s5 m3 l2">
 			<% if (movie.rating > 8) { %>
 				<img src="<%=movie.poster%>" class="profile-posters">
 			<% } %>
