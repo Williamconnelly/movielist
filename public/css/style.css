@@ -425,3 +425,64 @@ div nav i.material-icons {
 .profile-row div {
 	margin: 0 2em 1em 0;
 }
+
+.profile-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "profile-name average"
+    					 "favorites favorites";
+   	margin-top: 1em;
+   	border-radius: 1em;
+}
+
+.profile-name {
+	grid-area: profile-name;
+	padding: 1em;
+}
+
+.profile-score {
+	grid-area: average;
+	text-align: center;
+	border: 2px solid #14181e;
+	border-radius: 0.4em;
+	padding: 0.2em;
+}
+
+.profile-row {
+	grid-area: favorites;
+}
+
+.profile-row h3 {
+	background-color: #14181e;
+	border-radius: 0.2em;
+	padding: 0.2em;
+	color: white;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

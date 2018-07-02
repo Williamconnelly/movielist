@@ -1,12 +1,12 @@
 <div class="profile-grid">
-	<div>
-		<h1><%=user.name%>'s Profile</h1>
+	<div class="profile-name">
+		<h2><%=user.name%>'s Profile</h2>
 	</div>
 	<div>
-		<h3>Average Score: <%= userAverage %></h3>
+		<h2 class="profile-score">Average Rating: <%= userAverage %></h2>
 	</div>
 	<div class="row profile-row">
-		<h3>Your Favorite Movies</h3>
+		<h3>Favorite Movies</h3>
 		<% movies.forEach(function(movie, i) { %>
 			<div class="col s5 m3 l2">
 				<% if (movie.rating > 8) { %>
