@@ -242,11 +242,13 @@ ul.dropdown-content.select-dropdown li span {
 	text-align: center;
 	margin: 0 auto;
 	background-color: transparent;
+	border-color: transparent;
 }
 
 .movie-grid-button {
 	border: 0;
 	background-color: transparent;
+	outline: none;
 }
 
 .movie-grid-button:focus {
@@ -279,8 +281,6 @@ ul.dropdown-content.select-dropdown li span {
     					 "buttons";
    	margin-bottom: 2em;
    	height: 18em;
-   	background-color: #14181e;
-/*   	padding: 1em !important;*/
 }
 
 .material-tooltip {
