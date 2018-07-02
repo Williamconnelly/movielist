@@ -23,7 +23,7 @@ router.post("/", function(req, res) {
 	});
 });
 
-// GET movie/:id - Displays a specific movie using the API and IMDB id
+// GET movies/:id - Displays a specific movie using the API and IMDB id
 router.get("/:id", function(req, res) {
 	//Checks for user presence and passes additional information if logged in
 	if (req.user) {
