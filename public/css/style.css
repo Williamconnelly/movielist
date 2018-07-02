@@ -80,7 +80,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 }
 
 .movie-grid h5 {
-	/*border: 2px solid white;*/
 	border-radius: 5px;
 	color: white;
 	font-size: 1.2em;
@@ -134,14 +133,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .info-col {
 	grid-area: info;
 	margin-left: 1em;
-/*	display: grid;
-	grid-template-columns: 1fr;
-    grid-template-rows: 11em 4em 4em 4em;
-    grid-template-areas: "plot"
-    					 "director"
-    					 "genre"
-    					 "rated"
-    					 "runtime";*/
 }
 
 .plot-info {
@@ -232,7 +223,7 @@ ul.dropdown-content.select-dropdown li span {
     border-radius: 10px;
 }
 
-.rating-button {
+.select-button {
 	grid-area: rating;
 	padding-left: 2.4em;
 }
@@ -460,29 +451,3 @@ div nav i.material-icons {
 	color: white;
 	text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

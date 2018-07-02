@@ -1,5 +1,3 @@
-<!-- <h1 class="toggleName"><%=user.name%>'s List</h1> -->
-
 <nav class="sort-nav">
     <div class="nav-wrapper sort-nav-wrapper">
   		<a href="/user_movies" class="brand-logo"><%=user.name%>'s Movie List</a>
@@ -71,6 +69,7 @@
 		</tr>
 	</thead>
 	<tbody>
+		<!-- Adds all User-associated movies to a table display -->
 		<% movies.forEach(function(movie, i) { %>
 			<tr>
 				<td><a href="/movies/<%=movie.api_id%>"><img src="<%=movie.poster%>" class="square" style="height: 6em; border-radius: 0.5em"></a></td>

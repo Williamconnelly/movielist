@@ -24,14 +24,12 @@ $(document).ready(function(){
 	$(".updateScore").on("submit", function(e) {
 		e.preventDefault();
 		var newData = $(this).serialize();
-		console.log(newData);
 		var url = $(this).attr("action");
 		$.ajax({
 			method: "PUT",
 			url: url,
 			data: newData
 		}).done(function(data) {
-			console.log(data);
 			window.location = "/user_movies";
 		});
 	});

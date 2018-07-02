@@ -7,6 +7,7 @@
 	</div>
 	<div class="row profile-row">
 		<h3>Favorite Movies</h3>
+		<!-- Lists movies in User's associated movies with a score greater than 8 -->
 		<% movies.forEach(function(movie, i) { %>
 			<div class="col s5 m3 l2">
 				<% if (movie.rating > 8) { %>

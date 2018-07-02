@@ -2,6 +2,7 @@
 	<form action="/movies" method="POST" class="landing-form">
 		<img class="search-logo" src="/img/Logo.png">
 		<input type="text" name="movie_search" placeholder="Search" autocomplete="off">
+		<!-- Checks for user presence and displays a different set of buttons -->
 		<% if (currentUser) { %>
 			<div class="button-index">
 				<a class="waves-effect waves-light btn-large blue landing-button profile-button">

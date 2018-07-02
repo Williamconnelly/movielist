@@ -18,7 +18,6 @@ router.get("/", isLoggedIn ,function(req, res) {
 // POST / - Add selected movie to user's list in db
 router.post("/", function(req, res) {
 	var movie = req.body;
-	console.log("Checking form input", movie);
 	db.user.find({
 		where: {
 			id: req.user.id
@@ -36,7 +35,6 @@ router.post("/", function(req, res) {
 			}
 		}).spread(function(movie, created) {
 			user.addMovie(movie).then(function(movie) {
-				 console.log(movie, "added to", user);
 				 res.redirect("/user_movies");
 			})
 		}).catch(function(error) {
@@ -91,6 +89,7 @@ router.post("/sorted", isLoggedIn, function(req, res) {
 	});
 });
 
+// DELETE /user_movies/:id - Recieves the id of a movie and removes the user's association with it
 router.delete("/:id", function(req, res) {
 	db.usersMovies.destroy({
 		where: {
@@ -102,6 +101,7 @@ router.delete("/:id", function(req, res) {
 	});
 });
 
+// PUT /user_movies/:id - Recieves the id of a movie and updates the rating attribute
 router.put("/:id", function(req, res) {
 	db.movie.update({
 		rating: req.body.rating

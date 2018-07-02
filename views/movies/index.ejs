@@ -1,12 +1,14 @@
 <div id="movie-index">
 	<div class="row">	
 		<% movies.forEach(function(movie) { %>
+				<!-- Filters for response types from the API and only displays relevant results -->
 				<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie") { %>
 					<div class="col l4 m4 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="image-container">
 							<a href="/movies/<%=movie.imdbID%>"><img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>"></a>
 						</div>
 						<div id="button-grid">
+							<!-- Displays additional options if User is logged in -->
 							<% if (currentUser) { %>
 								<form action="/user_movies" method="POST" id="movieform">
 									<input type="hidden" name="title" value="<%=movie.Title%>">
@@ -17,22 +19,23 @@
 										<div class="add-button">
 											<input type="submit" class="movie-grid-button" value="Add">
 										</div>
+										<div class="select-button">
+											<select class="browser-default" name="rating">
+												<option value="0" disabled selected>Rate</option>
+											    <option value="1">1</option>
+											    <option value="2">2</option>
+											    <option value="3">3</option>
+											    <option value="4">4</option>
+											    <option value="5">5</option>
+											    <option value="6">6</option>
+											    <option value="7">7</option>
+											    <option value="8">8</option>
+											    <option value="9">9</option>
+											    <option value="10">10</option>
+											</select>
+										</div>
 								</form>
-								<div class="select-button">
-									<select class="browser-default" name="rating" form="movieform">
-										<option value="0" disabled selected>Rate</option>
-									    <option value="1">1</option>
-									    <option value="2">2</option>
-									    <option value="3">3</option>
-									    <option value="4">4</option>
-									    <option value="5">5</option>
-									    <option value="6">6</option>
-									    <option value="7">7</option>
-									    <option value="8">8</option>
-									    <option value="9">9</option>
-									    <option value="10">10</option>
-									</select>
-								</div><div class="show-button">
+								<div class="show-button">
 									<form action="/movies/<%=movie.imdbID%>" method="GET">
 										<input type="submit" class="movie-grid-button" value="Details">
 										<input type="hidden" name="api_id" value="<%=movie.imdbID%>">
