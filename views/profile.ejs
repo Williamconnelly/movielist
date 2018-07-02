@@ -3,3 +3,13 @@
 <a href="/user_movies">Your Movies</a>
 
 <h3>Average Score: <%= userAverage %></h3>
+
+<div class="row">
+	<% movies.forEach(function(movie, i) { %>
+		<div class="col s12 m3 l2">
+			<% if (movie.rating > 8) { %>
+				<img src="<%=movie.poster%>" class="profile-posters">
+			<% } %>
+		</div>
+	<% }) %>
+</div>

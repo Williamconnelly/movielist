@@ -47,16 +47,20 @@ app.get('/', function(req, res) {
 
 app.get('/profile', isLoggedIn, function(req, res) {
 	var sum = 0;
+	var movies;
 	// Finds the total sum of scores in a user's movie list
 	db.movie.findAll({where: {
 		'rating': {[Op.gt]: 0}},
   		include: [
      		{ model: db.user, where: { id: req.user.id }}
+  		],
+  		order: [
+  			['rating', 'DESC']
   		]
 	}).then(function(result) {
+		movies = result;
 		result.forEach(function(movie, i) {
 			sum+= movie.rating;
-			console.log(sum);
 		})
 	}).then(function() {
 		// Finds the total number of movies with a rating (1+) in a user's list
@@ -65,14 +69,14 @@ app.get('/profile', isLoggedIn, function(req, res) {
   		include: [
      		{ model: db.user, where: { id: req.user.id }}
   		]
-	}).then(function(result) {
-		var numMovies = result.count;
-		var averageScore = (sum/numMovies).toFixed(2);
-		if (averageScore === "NaN") {
-			averageScore = 0;
-		}
-		res.render('profile', {userAverage: averageScore});
-	})
+		}).then(function(result) {
+			var numMovies = result.count;
+			var averageScore = (sum/numMovies).toFixed(2);
+			if (averageScore === "NaN") {
+				averageScore = 0;
+			}
+			res.render('profile', {userAverage: averageScore, movies: movies});
+		})
 	})
 });
 

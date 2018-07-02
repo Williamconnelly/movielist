@@ -1,5 +1,4 @@
 nav {
-	/*background: linear-gradient(0deg, rgba(55,96,135,1) 0%, rgba(14,30,38,1) 100%);*/
 	background-color: #14181d;
 }
 
@@ -412,4 +411,10 @@ div nav i.material-icons {
 	.search-logo {
 		height: 6em;
 	}
+}
+
+.profile-posters {
+	height: 12em;
+	border-radius: 1em;
+	max-width: 100%;
 }
