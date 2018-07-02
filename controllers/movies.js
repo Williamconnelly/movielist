@@ -29,7 +29,7 @@ router.get("/:id", function(req, res) {
 		db.user.findById(req.user.id).then(function(user) {
 			user.getMovies({where: {api_id: req.params.id}}).then(function(user_movie) {
 				request({
-					url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id
+					url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id + "&plot=full"
 				}, function(error, response, body) {
 					if (!error && response.statusCode === 200) {
 						var movie = JSON.parse(body);
@@ -43,7 +43,7 @@ router.get("/:id", function(req, res) {
 		})
 	} else {
 		request({
-			url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id
+			url: "http://www.omdbapi.com/?apikey=" + process.env.OMDB + "&i=" + req.params.id + "&plot=full"
 		}, function(error, response, body) {
 			if (!error && response.statusCode === 200) {
 				var movie = JSON.parse(body);
