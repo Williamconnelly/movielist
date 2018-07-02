@@ -4,7 +4,7 @@
 				<% if(movie.Poster !== "N/A" && movie.Type !== "game" && movie.Type === "movie") { %>
 					<div class="col l4 m4 s6 movie-container tooltipped" data-position="top" data-tooltip="<%=movie.Title%>">
 						<div class="image-container">
-							<img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>">
+							<a href="/movies/<%=movie.imdbID%>"><img src="<%=movie.Poster%>" class="responsive-img index-movie" alt="<%=movie.Title%>"></a>
 						</div>
 						<div id="button-grid">
 							<% if (currentUser) { %>

@@ -1,15 +1,18 @@
-<h2>Profile Page</h2>
-
-<a href="/user_movies">Your Movies</a>
-
-<h3>Average Score: <%= userAverage %></h3>
-
-<div class="row profile-row">
-	<% movies.forEach(function(movie, i) { %>
-		<div class="col s5 m3 l2">
-			<% if (movie.rating > 8) { %>
-				<img src="<%=movie.poster%>" class="profile-posters">
-			<% } %>
-		</div>
-	<% }) %>
+<div class="profile-grid">
+	<div>
+		<h1><%=user.name%>'s Profile</h1>
+	</div>
+	<div>
+		<h3>Average Score: <%= userAverage %></h3>
+	</div>
+	<div class="row profile-row">
+		<h3>Your Favorite Movies</h3>
+		<% movies.forEach(function(movie, i) { %>
+			<div class="col s5 m3 l2">
+				<% if (movie.rating > 8) { %>
+					<a href="/movies/<%=movie.api_id%>"><img src="<%=movie.poster%>" class="profile-posters"></a>
+				<% } %>
+			</div>
+		<% }) %>
+	</div>
 </div>

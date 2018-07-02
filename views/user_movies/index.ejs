@@ -73,7 +73,7 @@
 	<tbody>
 		<% movies.forEach(function(movie, i) { %>
 			<tr>
-				<td><img src="<%=movie.poster%>" class="square" style="height: 6em; border-radius: 0.5em"></td>
+				<td><a href="/movies/<%=movie.api_id%>"><img src="<%=movie.poster%>" class="square" style="height: 6em; border-radius: 0.5em"></a></td>
 				<td><a href="/movies/<%=movie.api_id%>"><%=movie.title%></td>
 				<td><a href="#modal<%=i%>" class="modal-trigger"><%=movie.rating%></a></td>
 				<td><%=movie.type%></td>

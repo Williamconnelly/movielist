@@ -75,7 +75,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 			if (averageScore === "NaN") {
 				averageScore = 0;
 			}
-			res.render('profile', {userAverage: averageScore, movies: movies});
+			res.render('profile', {userAverage: averageScore, movies: movies, user: req.user});
 		})
 	})
 });
