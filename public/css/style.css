@@ -71,12 +71,31 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	margin-top: 1em;
 	display: grid;
 	grid-template-columns: 6fr 10fr 6fr;
-    grid-template-rows: 7em 10fr;
-    grid-template-areas: "title title year"
-    					 "poster info rating";	
-    background-color: #14181d;
-    padding: 1em;
-    border-radius: 1em;
+	grid-template-rows: 7em 10fr;
+	grid-template-areas: "title title year"
+												"poster info rating";	
+	background-color: #14181d;
+	padding: 1em;
+	border-radius: 1em;
+}
+
+@media screen and (max-width: 750px) {
+	.movie-grid {
+		display: inline-block;
+	}
+	.movie-grid h3 {
+		text-align: center;
+	}
+	.title-col {
+		margin: 0 !important;
+	}
+	div .poster-col {
+		height: 29em;
+	}
+	div .rating-tab h5, .rating-tab h6 {
+		text-align: left;
+		margin-left: 1em;
+	}
 }
 
 .movie-grid h5 {
