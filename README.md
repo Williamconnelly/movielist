@@ -80,9 +80,9 @@ As far as I'm aware, the site is fully functional as is. There are a number of s
 * CSS
 * Materialize
 * CSS Grid
-* JQuery
+* jQuery
 * JavaScript
 * Express
 * Sequelize
+* Postgres
 * OMDb API
-
